@@ -14,6 +14,6 @@ Motion::Project::App.setup do |app|
 end
 
 # App requirements
-#require 'teacup'
-#require 'motion-layout'
+require 'teacup'
+require 'motion-layout'
 

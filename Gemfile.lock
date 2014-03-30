@@ -6,12 +6,23 @@ GEM
       motion-require (~> 0.2)
     methadone (1.3.2)
       bundler
+    motion-layout (0.0.2)
     motion-require (0.2.0)
     rake (10.2.2)
+    sugarcube (1.5.5)
+    sweettea (0.6.0)
+      rake
+      sugarcube
+      teacup
+    teacup (2.2.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   ProMotion
+  motion-layout
   rake
+  sugarcube
+  sweettea
+  teacup
