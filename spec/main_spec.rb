@@ -1,4 +1,4 @@
-describe "Application 'promotion-layout-teacup'" do
+describe "Application 'baby matters'" do
   before do
     @app = UIApplication.sharedApplication
   end

@@ -10,10 +10,5 @@ end
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'promotion-layout-teacup'
+  app.name = 'baby_path'
 end
-
-# App requirements
-require 'teacup'
-require 'motion-layout'
-
