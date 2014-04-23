@@ -9,7 +9,7 @@ class AppDelegate < PM::Delegate
   end
 
   def on_load(app, options)
-    open Timeline.new(nav_bar: true)
+    open HomeScreen.new(nav_bar: true)
   end
 end
 
@@ -20,14 +20,14 @@ Teacup::Appearance.new do
   style UINavigationBar,
     barTintColor: @dark_pink,
     titleTextAttributes: {
-        UITextAttributeFont => UIFont.fontWithName('Noteworthy', size: 20),
-        UITextAttributeTextShadowColor => UIColor.colorWithWhite(0.0, alpha: 0.4),
-        UITextAttributeTextColor => UIColor.whiteColor
+        UITextAttributeFont => 'Noteworthy'.uifont(20),
+        UITextAttributeTextShadowColor => :white.uicolor(0.4),
+        UITextAttributeTextColor => :white.uicolor
     }
 
   style UIBarButtonItem, when_contained_in: UINavigationBar,
-    tintColor: UIColor.whiteColor
+    tintColor: :white.uicolor
 
   style UIBarButtonItem, when_contained_in: [UIToolbar, UIPopoverController],
-    tintColor: UIColor.whiteColor
+    tintColor: :white.uicolor
 end

@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'ProMotion'
-gem 'motion-layout'
+
+gem 'bubble-wrap'
+
+gem 'ProMotion', :git => 'https://github.com/clearsightstudio/ProMotion.git'
+gem 'formotion', :git => 'https://github.com/clayallsopp/formotion.git'
+gem 'ProMotion-formotion'
 
 gem 'sugarcube', require: 'sugarcube-common'
 gem 'teacup'

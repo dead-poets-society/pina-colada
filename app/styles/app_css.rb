@@ -6,8 +6,8 @@ Teacup::Stylesheet.new :app_css do
 
 
   @light_pink = rgb(237, 237, 237)
-  @pink = rgb(240, 178, 201)
-  @dark_pink = rgb(224, 79, 103)
+  @pink       = rgb(240, 178, 201)
+  @dark_pink  = rgb(224, 79, 103)
 
 
 end
