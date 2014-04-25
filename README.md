@@ -1,4 +1,4 @@
 == README
-[for git spike]
+[for git spike - modified from another local repo]
 The client app for baby path.
 For server-side code clone /baby_path.server
