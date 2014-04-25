@@ -51,7 +51,7 @@ end
 
 Teacup::Appearance.new do
 
-  import :app_css
+  import :colors_css
 
   style UINavigationBar,
     barTintColor: @dark_pink,

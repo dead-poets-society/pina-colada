@@ -23,7 +23,10 @@ end
 
 Teacup::Stylesheet.new :menu_css do
 
-  import :app_css
+  import :colors_css
+  import :fonts_css
+
+  LEFT_MARGIN = 14
 
   style :view,
     background: :clear
@@ -31,18 +34,15 @@ Teacup::Stylesheet.new :menu_css do
   style :baby_icon,
     image: 'menu/mi_duo'.uiimage,
     constraints: [
-      constrain_xy(14,41)    # manually adjusted postion
+      constrain_xy(LEFT_MARGIN,41)    # manually adjusted postion
     ]
 
-  style :menu_button,
+  style :menu_button, extends: :font_menu,
     color: @dark_pink,
-    font: 'Noteworthy'.uifont,
     contentHorizontalAlignment: UIControlContentHorizontalAlignmentLeft,
-    imageEdgeInsets: UIEdgeInsetsMake(0, 14, 0, 0),
-    titleEdgeInsets: UIEdgeInsetsMake(5, 24, 0, 0),
-    constraints: [
-      :full_width
-    ]
+    imageEdgeInsets: UIEdgeInsetsMake(0, LEFT_MARGIN, 0, 0),
+    titleEdgeInsets: UIEdgeInsetsMake(0, 24, 0, 0),
+    constraints: [:full_width]
 
   style :timeline, extends: :menu_button,
     constraints: [constrain_below(:baby_icon, 10)],

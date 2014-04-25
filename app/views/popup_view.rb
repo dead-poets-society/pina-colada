@@ -23,7 +23,7 @@ end
 
 Teacup::Stylesheet.new :popup_css do
 
-  import :app_css
+  import :colors_css
 
   MARGIN = 5
   ICON_TOP_MARGIN = MARGIN + 6
