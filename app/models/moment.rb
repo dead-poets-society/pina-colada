@@ -8,6 +8,24 @@ class Moment
     self.new_record_count += 1
   end
 
+  def self.mock_grouped_table_data
+    [
+      {
+        title: "Section One",
+        cells: [
+          {title: "row one of sec one"},
+          {title: "row two of sec one"}
+        ]
+      }, {
+        title: 'Section Two',
+        cells: [
+          {title: 'row one of sec two'},
+          {title: 'row two of sec two'}
+        ]
+      }
+    ]
+  end
+
   def self.mock_formotion_table_data
     {
       sections:

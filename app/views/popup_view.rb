@@ -1,11 +1,11 @@
-class AddRecordPopupView < UIView
+class PopupView < UIView
 
   def initWithFrame(frame)
     super.tap do
-      self.stylesheet = :add_record_popup_css
+      self.stylesheet = :popup_css
 
       subview(UIImageView,     :moment_icon)
-      subview(UIButton.system, :moment_btn, title: 'Moment')
+      subview(UIButton.system, :moment_btn, title: 'Moment').on(:touch) { App.delegate.open_new_moment_screen }
 
       subview(UILabel, :separator_1)
 
@@ -21,7 +21,7 @@ class AddRecordPopupView < UIView
 end
 
 
-Teacup::Stylesheet.new :add_record_popup_css do
+Teacup::Stylesheet.new :popup_css do
 
   import :app_css
 
@@ -29,8 +29,11 @@ Teacup::Stylesheet.new :add_record_popup_css do
   ICON_TOP_MARGIN = MARGIN + 6
   STATUS_AND_NAV_BAR = 65
 
-  style AddRecordPopupView,
+  style PopupView,
     background: @dark_pink,
+    layer: {
+      cornerRadius: 4
+    },
     constraints: [
       constrain_right(-MARGIN),
       constrain_top(STATUS_AND_NAV_BAR + MARGIN),
@@ -60,7 +63,7 @@ Teacup::Stylesheet.new :add_record_popup_css do
     ]
 
   style :moment_icon, extends: :icon,
-    image: 'clock_44'.uiimage,
+    image: 'popup/clock'.uiimage,
     constraints: [ constrain_top(ICON_TOP_MARGIN) ]
 
   style :moment_btn, extends: :popup_item,
@@ -73,7 +76,7 @@ Teacup::Stylesheet.new :add_record_popup_css do
     constraints: [constrain_below(:moment_btn, 0)]
 
   style :camera_icon, extends: :icon,
-    image: 'camera_44'.uiimage,
+    image: 'popup/camera'.uiimage,
     constraints: [ constrain_below(:separator_1, ICON_TOP_MARGIN) ]
 
   style :camera_btn, extends: :popup_item,
@@ -86,7 +89,7 @@ Teacup::Stylesheet.new :add_record_popup_css do
         constraints: [constrain_below(:camera_btn, 0)]
 
   style :notebook_icon, extends: :icon,
-    image: 'notebook_44'.uiimage,
+    image: 'popup/notebook'.uiimage,
     constraints: [ constrain_below(:separator_2, ICON_TOP_MARGIN) ]
 
   style :notebook_btn, extends: :popup_item,

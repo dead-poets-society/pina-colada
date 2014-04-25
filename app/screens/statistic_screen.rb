@@ -1,22 +1,14 @@
-class StatisticScreen <PM::Screen
+class StatisticScreen < GenericScreen
 
   stylesheet :statistic_css
 
   layout :view do
-
-  end
-
-  def on_init
-    @today = today_in_word
+    subview UILabel, :info, text: 'statistic charts coming soon...'
   end
 
   def on_load
-    set_nav_bar_button :right, title: 'timeline', action: :close_screen
+    @today = today_in_word
     self.title = "#{@today}"
-  end
-
-  def close_screen
-    close
   end
 
   def today_in_word
@@ -25,4 +17,14 @@ class StatisticScreen <PM::Screen
     date_formatter.dateFormat = 'MM/dd/yyyy'
     date_formatter.stringFromDate(now)
   end
+end
+
+
+Teacup::Stylesheet.new :statistic_css do
+
+  import :app_css
+
+  style :view,
+    background: :white
+
 end

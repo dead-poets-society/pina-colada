@@ -11,3 +11,5 @@ gem 'ProMotion-formotion'
 gem 'sugarcube', require: 'sugarcube-common'
 gem 'teacup'
 gem 'sweettea'
+
+gem 'motion-cocoapods', '~> 1.2'
