@@ -3,7 +3,7 @@ class PicturesScreen < GenericScreen
   stylesheet :pictures_css
   title 'Pictures'
 
-  layout :view do
+  layout :pictures_view do
 
   end
 
@@ -15,7 +15,7 @@ end
 
 Teacup::Stylesheet.new :pictures_css do
 
-  style :view,
+  style :pictures_view,
     background: :white
 
 end

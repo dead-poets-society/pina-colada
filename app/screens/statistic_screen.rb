@@ -2,7 +2,7 @@ class StatisticScreen < GenericScreen
 
   stylesheet :statistic_css
 
-  layout :view do
+  layout :statistic_view do
     subview UILabel, :info, text: 'statistic charts coming soon...'
   end
 
@@ -24,7 +24,7 @@ Teacup::Stylesheet.new :statistic_css do
 
   import :colors_css
 
-  style :view,
+  style :statistic_view,
     background: :white
 
 end

@@ -1,0 +1,292 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<enum name='REFrostedViewControllerDirectionBottom' value='3'/>
+<enum name='REFrostedViewControllerDirectionLeft' value='0'/>
+<enum name='REFrostedViewControllerDirectionRight' value='1'/>
+<enum name='REFrostedViewControllerDirectionTop' value='2'/>
+<enum name='REFrostedViewControllerLiveBackgroundStyleDark' value='1'/>
+<enum name='REFrostedViewControllerLiveBackgroundStyleLight' value='0'/>
+<function name='REFrostedViewControllerUIKitIsFlatMode'>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<class name='NSObject'>
+<method selector='frostedViewController:didHideMenuViewController:'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:didRecognizePanGesture:'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIPanGestureRecognizer*' index='1' name='recognizer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:didShowMenuViewController:'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:willAnimateRotationToInterfaceOrientation:duration:'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIInterfaceOrientation' index='1' name='toInterfaceOrientation' type='i' type64='q'/>
+<arg declared_type='NSTimeInterval' index='2' name='duration' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:willHideMenuViewController:'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:willShowMenuViewController:'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='REFrostedContainerViewController'>
+<method selector='animateApperance'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='containerView'>
+<retval declared_type='UIView*' type='@'/>
+</method>
+<method selector='frostedViewController'>
+<retval declared_type='REFrostedViewController*' type='@'/>
+</method>
+<method selector='hide'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='hideWithCompletionHandler:'>
+<arg declared_type='void (^)(void)' function_pointer='true' index='0' name='completionHandler' type='@?'>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panGestureRecognized:'>
+<arg declared_type='UIPanGestureRecognizer*' index='0' name='recognizer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='refreshBackgroundImage'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='resizeToSize:'>
+<arg declared_type='CGSize' index='0' name='size' type='{CGSize=ff}' type64='{CGSize=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='screenshotImage'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='setAnimateApperance:'>
+<arg declared_type='BOOL' index='0' name='animateApperance' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContainerView:'>
+<arg declared_type='UIView*' index='0' name='containerView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFrostedViewController:'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScreenshotImage:'>
+<arg declared_type='UIImage*' index='0' name='screenshotImage' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='REFrostedViewController'>
+<method selector='animationDuration'>
+<retval declared_type='NSTimeInterval' type='d'/>
+</method>
+<method selector='backgroundFadeAmount'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='blurRadius'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='blurSaturationDeltaFactor'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='blurTintColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='contentViewController'>
+<retval declared_type='UIViewController*' type='@'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='direction'>
+<retval declared_type='REFrostedViewControllerDirection' type='i' type64='q'/>
+</method>
+<method selector='hideMenuViewController'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='hideMenuViewControllerWithCompletionHandler:'>
+<arg declared_type='void (^)(void)' function_pointer='true' index='0' name='completionHandler' type='@?'>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='initWithContentViewController:menuViewController:'>
+<arg declared_type='UIViewController*' index='0' name='contentViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='limitMenuViewSize'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='liveBlur'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='liveBlurBackgroundStyle'>
+<retval declared_type='REFrostedViewControllerLiveBackgroundStyle' type='i' type64='q'/>
+</method>
+<method selector='menuViewController'>
+<retval declared_type='UIViewController*' type='@'/>
+</method>
+<method selector='menuViewSize'>
+<retval declared_type='CGSize' type='{CGSize=ff}' type64='{CGSize=dd}'/>
+</method>
+<method selector='panGestureEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='panGestureRecognized:'>
+<arg declared_type='UIPanGestureRecognizer*' index='0' name='recognizer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panGestureRecognizer'>
+<retval declared_type='UIPanGestureRecognizer*' type='@'/>
+</method>
+<method selector='presentMenuViewController'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='resizeMenuViewControllerToSize:'>
+<arg declared_type='CGSize' index='0' name='size' type='{CGSize=ff}' type64='{CGSize=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAnimationDuration:'>
+<arg declared_type='NSTimeInterval' index='0' name='animationDuration' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBackgroundFadeAmount:'>
+<arg declared_type='CGFloat' index='0' name='backgroundFadeAmount' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBlurRadius:'>
+<arg declared_type='CGFloat' index='0' name='blurRadius' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBlurSaturationDeltaFactor:'>
+<arg declared_type='CGFloat' index='0' name='blurSaturationDeltaFactor' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBlurTintColor:'>
+<arg declared_type='UIColor*' index='0' name='blurTintColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContentViewController:'>
+<arg declared_type='UIViewController*' index='0' name='contentViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg declared_type='id' index='0' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDirection:'>
+<arg declared_type='REFrostedViewControllerDirection' index='0' name='direction' type='i' type64='q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLimitMenuViewSize:'>
+<arg declared_type='BOOL' index='0' name='limitMenuViewSize' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLiveBlur:'>
+<arg declared_type='BOOL' index='0' name='liveBlur' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLiveBlurBackgroundStyle:'>
+<arg declared_type='REFrostedViewControllerLiveBackgroundStyle' index='0' name='liveBlurBackgroundStyle' type='i' type64='q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMenuViewController:'>
+<arg declared_type='UIViewController*' index='0' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMenuViewSize:'>
+<arg declared_type='CGSize' index='0' name='menuViewSize' type='{CGSize=ff}' type64='{CGSize=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPanGestureEnabled:'>
+<arg declared_type='BOOL' index='0' name='panGestureEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPanGestureRecognizer:'>
+<arg declared_type='UIPanGestureRecognizer*' index='0' name='panGestureRecognizer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIImage'>
+<method selector='re_applyBlurWithRadius:tintColor:saturationDeltaFactor:maskImage:'>
+<arg declared_type='CGFloat' index='0' name='blurRadius' type='f' type64='d'/>
+<arg declared_type='UIColor*' index='1' name='tintColor' type='@'/>
+<arg declared_type='CGFloat' index='2' name='saturationDeltaFactor' type='f' type64='d'/>
+<arg declared_type='UIImage*' index='3' name='maskImage' type='@'/>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+</class>
+<class name='UIView'>
+<method selector='re_screenshot'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+</class>
+<class name='UIViewController'>
+<method selector='frostedViewController'>
+<retval declared_type='REFrostedViewController*' type='@'/>
+</method>
+<method selector='re_displayController:frame:'>
+<arg declared_type='UIViewController*' index='0' name='controller' type='@'/>
+<arg declared_type='CGRect' index='1' name='frame' type='{CGRect={CGPoint=ff}{CGSize=ff}}' type64='{CGRect={CGPoint=dd}{CGSize=dd}}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='re_hideController:'>
+<arg declared_type='UIViewController*' index='0' name='controller' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFrostedViewController:'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<informal_protocol name='REFrostedViewControllerDelegate'>
+<method selector='frostedViewController:didHideMenuViewController:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:didRecognizePanGesture:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIPanGestureRecognizer*' index='1' name='recognizer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:didShowMenuViewController:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:willAnimateRotationToInterfaceOrientation:duration:' type='v24@0:4@8i12d16' type64='v40@0:8@16q24d32'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIInterfaceOrientation' index='1' name='toInterfaceOrientation' type='i' type64='q'/>
+<arg declared_type='NSTimeInterval' index='2' name='duration' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:willHideMenuViewController:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='frostedViewController:willShowMenuViewController:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='REFrostedViewController*' index='0' name='frostedViewController' type='@'/>
+<arg declared_type='UIViewController*' index='1' name='menuViewController' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+</signatures>

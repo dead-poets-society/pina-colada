@@ -1,11 +1,13 @@
 class PopupView < UIView
 
+  attr_accessor :home_screen
+
   def initWithFrame(frame)
     super.tap do
       self.stylesheet = :popup_css
 
       subview(UIImageView,     :moment_icon)
-      subview(UIButton.system, :moment_btn, title: 'Moment').on(:touch) { App.delegate.open_new_moment_screen }
+      subview(UIButton.system, :moment_btn, title: 'Moment').on(:touch) { @home_screen.show_new_moment }
 
       subview(UILabel, :separator_1)
 
@@ -16,6 +18,7 @@ class PopupView < UIView
 
       subview(UIImageView,     :notebook_icon)
       subview(UIButton.system, :notebook_btn, title: 'Note')
+
     end
   end
 end
@@ -56,11 +59,7 @@ Teacup::Stylesheet.new :popup_css do
     ]
 
   style :icon,
-    constraints: [
-      constrain_width(16),
-      constrain_height(16),
-      constrain_left(MARGIN + 2)
-    ]
+    constraints: [constrain_left(MARGIN + 2)]
 
   style :moment_icon, extends: :icon,
     image: 'popup/clock'.uiimage,

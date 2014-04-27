@@ -1,6 +1,6 @@
 class AppDelegate < PM::Delegate
 
-  attr_accessor :root_vc, :popup, :new_moment
+  attr_accessor :root_vc
 
   def application(application, didFinishLaunchingWithOptions: options)
     super
@@ -14,9 +14,6 @@ class AppDelegate < PM::Delegate
     menu = MenuViewController.new
     menu.current = :timeline
 
-    self.popup = PopupView.new
-    self.new_moment = NewMomentScreen.new
-
     self.root_vc = frosted_view_controller(menu)
     self.root_vc.direction = REFrostedViewControllerDirectionLeft
     self.root_vc.menuViewSize = [(Device.screen.width / 2 + 40), 0]
@@ -28,17 +25,8 @@ class AppDelegate < PM::Delegate
       BW.debug = true unless App.info_plist['AppStoreRelease'] == true
   end
 
-  def show_popup
-    self.popup.hidden = false
-    self.popup.fade_in
-  end
-
   def show_menu
     self.root_vc.presentMenuViewController    # present frosted_view_controller manually
-  end
-
-  def open_new_moment_screen
-    open NewMomentScreen.new(nav_bar: true)
   end
 
   def frosted_view_controller(menu)

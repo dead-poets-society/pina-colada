@@ -1,9 +1,9 @@
-class NewMomentScreen < PM::Screen
+class NewMomentScreen < PM::TableScreen
 
   stylesheet :new_moment_css
   title 'New Moment'
 
-  layout :view do
+  layout :new_moment_view do
 
   end
 
@@ -16,14 +16,14 @@ class NewMomentScreen < PM::Screen
   end
 
   def close
-    close
+    close_screen
   end
 end
 
 
 Teacup::Stylesheet.new :new_moment_css do
 
-  style :view,
+  style :new_moment_view,
     background: :white
 
 end
