@@ -31,20 +31,6 @@ Teacup::Stylesheet.new :popup_css do
 
   MARGIN = 8
   ICON_TOP_MARGIN = MARGIN + 6
-  STATUS_AND_NAV_BAR = 65
-
-  # style PopupView,
-  #   background: @dark_pink,
-  #   layer: {
-  #     cornerRadius: 4
-  #   },
-  #   constraints: [
-  #     constrain_right(-MARGIN),
-  #     constrain_top(STATUS_AND_NAV_BAR + MARGIN),
-  #     constrain_width(100),
-  #     constrain_height(120)
-  #   ],
-  #   hidden: true
 
   style :popup_item,
     color: :white,

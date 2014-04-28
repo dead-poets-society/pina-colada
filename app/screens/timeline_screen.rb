@@ -1,8 +1,7 @@
-# class TimelineScreen < GenericScreen
-# class TimelineScreen < PM::FormotionScreen
 class TimelineScreen < PM::TableScreen
 
-  # stylesheet :home_css
+  searchable placeholder: 'Find a moment'
+
   title 'Baby Path'
 
   def on_init
@@ -18,16 +17,15 @@ class TimelineScreen < PM::TableScreen
     add @popup, {
       hidden: true,
       background_color: '#E04F67'.uicolor,
-      layer: {cornerRadius: 4},
-      frame: [[Device.screen.width - 110, 10], [100, 120]],
+      layer: {
+        corner_radius: 4.0,
+        shadow_radius: 4.0,
+        shadow_opacity: 0.4,
+        shadow_color: UIColor.blackColor.CGColor
+      },
+      frame: popup_frame,
     }
   end
-
-  # layout self.view, :timeline_view do
-  #   @popup = subview PopupView, :popup
-  #   @popup.home_screen = self
-  #   self.view.on_tap { @popup.fade_out }
-  # end
 
   def table_data
     # Moment.mock_formotion_table_data
@@ -37,17 +35,21 @@ class TimelineScreen < PM::TableScreen
   def show_popup
     @popup.hidden = false
     @popup.fade_in
+    self.view.bringSubviewToFront @popup
   end
 
   def show_new_moment
     open_modal NewMomentScreen.new(nav_bar: true)
     @popup.fade_out
   end
+
+  def popup_frame
+    w = 110
+    h = 130
+    right_margin = 10
+    x = Device.screen.width - right_margin - w
+    y = 20
+
+    [[x, y], [w, h]]
+  end
 end
-
-
-# Teacup::Stylesheet.new :home_css do
-#
-#   style :timeline_view,
-#     background: :white
-# end
