@@ -1,4 +1,4 @@
-class NewMomentScreen < PM::TableScreen
+class NewMomentScreen < PM::FormotionScreen
 
   stylesheet :new_moment_css
   title 'New Moment'
@@ -8,14 +8,14 @@ class NewMomentScreen < PM::TableScreen
   end
 
   def on_load
-    set_nav_bar_right_button 'Cancel', action: :close
+    set_nav_bar_right_button 'Cancel', action: :cancel
   end
 
   def table_data
-    Moment.mock_grouped_table_data
+    Moment.mock_formotion_table_data
   end
 
-  def close
+  def cancel
     close_screen
   end
 end

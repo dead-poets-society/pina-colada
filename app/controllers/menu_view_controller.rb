@@ -3,7 +3,7 @@ class MenuViewController < UIViewController
 
   stylesheet :menu_css
 
-  layout :view do
+  layout :menu_view do
     subview UIImageView, :baby_icon
 
     [:timeline, :pictures, :statistic, :settings].each do |menu|
@@ -26,41 +26,42 @@ Teacup::Stylesheet.new :menu_css do
   import :colors_css
   import :fonts_css
 
-  LEFT_MARGIN = 14
+  LEFT_INSET = 14
+  ITEM_Y_MARGIN = 5
+  ITEM_IMG_TITLE_INSET = 24
 
-  style :view,
+  style :menu_item,
+    color: @dark_pink,
+    font: @font_menu_item,
+    contentHorizontalAlignment: UIControlContentHorizontalAlignmentLeft,
+    imageEdgeInsets: UIEdgeInsetsMake(0, LEFT_INSET, 0, 0),
+    titleEdgeInsets: UIEdgeInsetsMake(0, ITEM_IMG_TITLE_INSET, 0, 0),
+    constraints: [:full_width]
+
+  style :menu_view,
     background: :clear
 
   style :baby_icon,
-    image: 'menu/mi_duo'.uiimage,
-    constraints: [
-      constrain_xy(LEFT_MARGIN,41)    # manually adjusted postion
-    ]
+    image: 'menu/baby_icon'.uiimage,
+    constraints: [constrain_xy(LEFT_INSET,41)]    # manually adjusted postion
 
-  style :menu_button, extends: :font_menu,
-    color: @dark_pink,
-    contentHorizontalAlignment: UIControlContentHorizontalAlignmentLeft,
-    imageEdgeInsets: UIEdgeInsetsMake(0, LEFT_MARGIN, 0, 0),
-    titleEdgeInsets: UIEdgeInsetsMake(0, 24, 0, 0),
-    constraints: [:full_width]
-
-  style :timeline, extends: :menu_button,
-    constraints: [constrain_below(:baby_icon, 10)],
+  style :timeline, extends: :menu_item,
+    constraints: [constrain_below(:baby_icon, ITEM_Y_MARGIN * 2)],
     title: 'Timeline',
     image: 'menu/timeline'.uiimage
 
-  style :pictures, extends: :menu_button,
-    constraints: [constrain_below(:timeline)],
+  style :pictures, extends: :menu_item,
+    constraints: [constrain_below(:timeline, ITEM_Y_MARGIN)],
     title: 'Pictures',
-    image: 'menu/timeline'.uiimage
+    image: 'menu/picture'.uiimage
 
-  style :statistic, extends: :menu_button,
-    constraints: [constrain_below(:pictures)],
+  style :statistic, extends: :menu_item,
+    constraints: [constrain_below(:pictures, ITEM_Y_MARGIN)],
     title: 'Statistic',
-    image: 'menu/timeline'.uiimage
+    image: 'menu/statistic'.uiimage
 
-  style :settings, extends: :menu_button,
+  style :settings, extends: :menu_item,
     constraints: [constrain_bottom(-15)],
     title: 'Settings',
-    image: 'menu/timeline'.uiimage
+    image: 'menu/setting'.uiimage
 end

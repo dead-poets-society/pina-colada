@@ -27,27 +27,28 @@ end
 Teacup::Stylesheet.new :popup_css do
 
   import :colors_css
+  import :fonts_css
 
-  MARGIN = 5
+  MARGIN = 8
   ICON_TOP_MARGIN = MARGIN + 6
   STATUS_AND_NAV_BAR = 65
 
-  style PopupView,
-    background: @dark_pink,
-    layer: {
-      cornerRadius: 4
-    },
-    constraints: [
-      constrain_right(-MARGIN),
-      constrain_top(STATUS_AND_NAV_BAR + MARGIN),
-      constrain_width(80),
-      constrain_height(100)
-    ],
-    hidden: true
+  # style PopupView,
+  #   background: @dark_pink,
+  #   layer: {
+  #     cornerRadius: 4
+  #   },
+  #   constraints: [
+  #     constrain_right(-MARGIN),
+  #     constrain_top(STATUS_AND_NAV_BAR + MARGIN),
+  #     constrain_width(100),
+  #     constrain_height(120)
+  #   ],
+  #   hidden: true
 
   style :popup_item,
     color: :white,
-    font: :system.uifont(12),
+    font: @font_popup_item,
     constraints: [constrain_left(MARGIN + 2)]
 
   style :separator,

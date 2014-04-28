@@ -1,26 +1,38 @@
-# class HomeScreen < PM::FormotionScreen
-# class HomeScreen < PM::GroupedTableScreen
+# class TimelineScreen < GenericScreen
+# class TimelineScreen < PM::FormotionScreen
+class TimelineScreen < PM::TableScreen
 
-class TimelineScreen < GenericScreen
-
-  stylesheet :home_css
+  # stylesheet :home_css
   title 'Baby Path'
 
-  layout :timeline_view do
-    @popup = subview PopupView, :popup
-    @popup.home_screen = self
-    self.view.on_tap { @popup.fade_out }
-  end
-
   def on_init
-    super
+    set_nav_bar_left_button 'menu/menuicon'.uiimage, target: App.delegate, action: :show_menu, accessibility_label: "Menu"
     set_nav_bar_right_button :system, system_icon: :add, action: :show_popup
   end
 
-  # def table_data
-  #   # Moment.mock_formotion_table_data
-  #   Moment.mock_grouped_table_data
+  def on_load
+    @popup = PopupView.new
+    @popup.home_screen = self
+    self.view.on_tap { @popup.fade_out }
+
+    add @popup, {
+      hidden: true,
+      background_color: '#E04F67'.uicolor,
+      layer: {cornerRadius: 4},
+      frame: [[Device.screen.width - 110, 10], [100, 120]],
+    }
+  end
+
+  # layout self.view, :timeline_view do
+  #   @popup = subview PopupView, :popup
+  #   @popup.home_screen = self
+  #   self.view.on_tap { @popup.fade_out }
   # end
+
+  def table_data
+    # Moment.mock_formotion_table_data
+    Moment.mock_table_data
+  end
 
   def show_popup
     @popup.hidden = false
@@ -34,8 +46,8 @@ class TimelineScreen < GenericScreen
 end
 
 
-Teacup::Stylesheet.new :home_css do
-
-  style :timeline_view,
-    background: :white
-end
+# Teacup::Stylesheet.new :home_css do
+#
+#   style :timeline_view,
+#     background: :white
+# end

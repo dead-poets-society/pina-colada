@@ -9,8 +9,6 @@ class AppDelegate < PM::Delegate
   end
 
   def on_load(app, options)
-    setup
-
     menu = MenuViewController.new
     menu.current = :timeline
 
@@ -19,10 +17,6 @@ class AppDelegate < PM::Delegate
     self.root_vc.menuViewSize = [(Device.screen.width / 2 + 40), 0]
 
     open self.root_vc
-  end
-
-  def setup
-      BW.debug = true unless App.info_plist['AppStoreRelease'] == true
   end
 
   def show_menu
@@ -40,11 +34,12 @@ end
 Teacup::Appearance.new do
 
   import :colors_css
+  import :fonts_css
 
   style UINavigationBar,
     barTintColor: @dark_pink,
     titleTextAttributes: {
-        UITextAttributeFont => 'Noteworthy'.uifont(20),
+        UITextAttributeFont => @font_app_title,
         UITextAttributeTextShadowColor => :white.uicolor(0.4),
         UITextAttributeTextColor => :white.uicolor
     }

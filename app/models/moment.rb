@@ -25,6 +25,16 @@ class Moment
       }
     ]
   end
+  def self.mock_table_data
+    [{
+      cells: [
+        {title: "row one of sec one"},
+        {title: "row two of sec one"},
+        {title: 'row one of sec two'},
+        {title: 'row two of sec two'}
+      ]
+    }]
+  end
 
   def self.mock_formotion_table_data
     {
@@ -45,19 +55,19 @@ class Moment
                  type: :text,
                  subtitle: 'normal',
                  value: 'Mi Duo ate fruit',
-                 image: 'apple_32'.uiimage
+                 image: 'moments/apple_32'.uiimage
                }, {
                  title: '15:30',
                  type: :text,
                  subtitle: 'normal',
                  value: 'Mi Duo poo',
-                 image: 'poo_32'.uiimage
+                 image: 'moments/poo_32'.uiimage
                }, {
                  title: '20:30',
                  type: :text,
                  subtitle: '230 ml',
                  value: 'Mi Duo drink water',
-                 image: 'bottle_32'.uiimage,
+                 image: 'moments/bottle_32'.uiimage,
                  input_accessory: :done
                }]
           }, {
@@ -68,28 +78,28 @@ class Moment
                  type: :text,
                  value: 'Mi Duo was fed',
                  subtitle: 'right side',
-                 image: 'breast_feed_32'.uiimage,
+                 image: 'moments/breast_feed_32'.uiimage,
                  input_accessory: :done
                }, {
                  title: '20:30',
                  type: :text,
                  subtitle: '2 hours',
                  value: 'Mi Duo felt asleep',
-                 image: 'sleep_32'.uiimage,
+                 image: 'moments/sleep_32'.uiimage,
                  input_accessory: :done
                }, {
                  title: '21:10',
                  type: :text,
                  subtitle: 'left side',
                  value: 'Mi Duo was fed',
-                 image: 'breast_feed_32'.uiimage,
+                 image: 'moments/breast_feed_32'.uiimage,
                  input_accessory: :done
                }, {
                  title: '23:30',
                  type: :text,
                  subtitle: '130 ml',
                  value: 'Mi Duo drink water',
-                 image: 'bottle_32'.uiimage,
+                 image: 'moments/bottle_32'.uiimage,
                  input_accessory: :done
                }]
           }, {
@@ -100,14 +110,14 @@ class Moment
                  type: :text,
                  value: 'Mi Duo was fed',
                  subtitle: 'left side',
-                 image: 'breast_feed_32'.uiimage,
+                 image: 'moments/breast_feed_32'.uiimage,
                  input_accessory: :done
                }, {
                  title: '20:30',
                  type: :text,
                  subtitle: '2 hours',
                  value: 'Mi Duo felt asleep',
-                 image: 'sleep_32'.uiimage,
+                 image: 'moments/sleep_32'.uiimage,
                  input_accessory: :done
                }]
           }]
